@@ -280,13 +280,21 @@ export default class App extends Component {
 
         <div className='todo-list'>
           <h2>
-            Create todo
+            Create place
             <SettingsIcon onClick={this.openModal} className='mobile-toggle' />
           </h2>
           <form className='todo-create-wrapper' onSubmit={this.saveTodo}>
             <input
               className='todo-create-input'
-              placeholder='Add a todo item'
+              placeholder='Add a place name'
+              name='name'
+              ref={el => this.inputElement = el}
+              autoComplete='off'
+              style={{marginRight: 20}}
+            />
+            <input
+              className='todo-create-input'
+              placeholder='Add a place category'
               name='name'
               ref={el => this.inputElement = el}
               autoComplete='off'
@@ -294,7 +302,7 @@ export default class App extends Component {
             />
             <div className='todo-actions'>
               <button className='todo-create-button'>
-                Create todo
+                Create place
               </button>
               <SettingsIcon onClick={this.openModal}  className='desktop-toggle' />
             </div>
